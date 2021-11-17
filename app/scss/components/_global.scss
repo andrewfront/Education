@@ -1,6 +1,9 @@
 html,
 body {
     height: 100%;
+    @extend %opensansreg;
+    font-size: 16px;
+    color: $text;
 }
 
 .wrapper {
@@ -16,7 +19,12 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1262px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.container__fluid {
+    max-width: 1470px;
     margin: 0 auto;
     padding: 0 15px;
 }
