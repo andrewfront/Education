@@ -28,3 +28,13 @@ body {
     margin: 0 auto;
     padding: 0 15px;
 }
+.global__btn {
+    border-radius: 8px;
+    line-height: 32px;
+    color: $white;
+    background-color: $button;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: $buttonhover;
+    }
+}

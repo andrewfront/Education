@@ -103,7 +103,12 @@ textarea {
     margin: 0;
     /* 2 */
 }
-
+ul,
+li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
 button,
 input {
     /* 1 */

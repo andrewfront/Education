@@ -1,0 +1,133 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 44px;
+    // background-color: $black;
+    &__logo {
+        z-index: 2;
+    }
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav {
+        &__link {
+            position: relative;
+            margin-right: 56px;
+            color: $white;
+            padding-bottom: 8px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 3px;
+                width: 30%;
+                background-color: $white;
+                transition: all 0.5s ease-in-out;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        &__link:hover.nav__link::before {
+            width: 100%;
+        }
+    }
+}
+
+/*********************** HAmburger ***************************/
+.menu {
+    display: none;
+    z-index: 1;
+}
+.hambergerIcon {
+    height: 10px;
+    width: 70px;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    border-radius: 50px;
+    background-color: $white;
+    transform: translateY(-50%) rotate(0deg);
+    transition: all ease 0.5s;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        height: inherit;
+        border-radius: inherit;
+        background-color: inherit;
+        margin: auto;
+        width: 50%;
+        transition: all ease 0.5s;
+    }
+
+    &::before {
+        top: -20px;
+        left: 0;
+        transform-origin: left;
+    }
+
+    &::after {
+        bottom: -20px;
+        right: 0;
+        transform-origin: right;
+    }
+}
+
+.open {
+    transform: translate(-50%, -50%) rotate(135deg);
+
+    &::before {
+        top: 0;
+        transform: translateX(100%) rotate(-90deg);
+    }
+
+    &::after {
+        bottom: 0;
+        transform: translateX(-100%) rotate(-90deg);
+    }
+}
+
+/*********************** HAmburger End ***************************/
+@media (max-width: 777px) {
+    .nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 90%);
+        z-index: 1;
+        transform: translateX(-100%);
+        transition: all 0.3s ease-in-out;
+    }
+    .active {
+        overflow-y: auto;
+        transform: translateX(0);
+      }
+    .header .nav__link {
+        margin-right: 0;
+        margin-bottom: 20px;
+        font-size: 26px;
+    }
+    .header .nav__link::before{
+        display: none;
+    }
+    .menu {
+        display: block;
+    }
+}
