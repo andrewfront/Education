@@ -1,0 +1,37 @@
+.skills {
+    margin-bottom: 160px;
+&__info {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 52px;
+}
+&__content {
+    max-width: 712px;
+}
+&__text {
+    max-width: 615px;
+}
+&__btns {
+    display: flex;
+    align-items: center;
+}
+&__wrapper {
+    margin-left: -68px;
+}
+&__slide {
+    max-width: 400px;
+}
+&__subtitle {
+    @extend %poppinsbold;
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    line-height: 48px;
+    color: $white;
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+}

@@ -1,4 +1,5 @@
 .headertop {
+    background-color: $black;
     // height: 728px;
     background-image: url(../images/headertop/headertopbg.jpg);
     background-repeat: no-repeat;
@@ -35,6 +36,7 @@
 }
 
 .headertop__gallery {
+    margin-bottom: 232px;
     &-inner {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -79,6 +81,11 @@
  .headertop__gallery-subtitle {
      font-size: 16px;
  }
+}
+@media (max-width: 1305px) {
+    .headertop__gallery {
+        margin-bottom: 50px;
+    }
 }
 @media (max-width: 884px) {
     .headertop__gallery-inner {

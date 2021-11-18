@@ -36,6 +36,7 @@
     "es6-promise-polyfill": "^1.2.0",
     "gsap": "^3.8.0",
     "nodelist-foreach-polyfill": "^1.2.0",
+    "swiper": "^7.3.0",
     "uninstall": "0.0.0"
   }
 }
