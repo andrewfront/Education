@@ -5,10 +5,11 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-
+    &__inner {
+        padding: 200px 579px 124px 105px;
+    }
     &__item--content {
         max-width: 756px;
-        padding: 200px 579px 124px 105px;
         color: $white;
     }
 
@@ -65,8 +66,10 @@
     .headertop__text {
         max-width: 100%;
     }
-    .headertop__item--content {
+    .headertop__inner {
         padding: 0;
+    }
+    .headertop__item--content {
         min-height: 314px;
         margin: 100px auto 0;
     }

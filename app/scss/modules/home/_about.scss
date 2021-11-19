@@ -114,6 +114,22 @@
         text-align: center;
     }
 }
+@media (max-width: 995px) {
+    .about {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 834px) {
+.skills__info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.skills__text {
+    max-width: 100%;
+    margin-bottom: 25px;
+}
+}
 @media (max-width: 613px) {
     .about__item-first {
         margin-bottom: 37px;

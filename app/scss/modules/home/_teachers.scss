@@ -1,0 +1,110 @@
+.teachers {
+    margin-bottom: 106px;
+
+    &__info {
+        max-width: 608px;
+        margin: 0 auto 48px;
+        text-align: center;
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 17px;
+        grid-row-gap: 24px;
+    }
+
+    &__item {
+        max-width: 295px;
+        position: relative;
+        background-color: $violet;
+        border-radius: 8px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .teachers__item:hover .teachers__information {
+        transition: all 0.3s ease-in-out;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .teachers__item:hover .teachers__img {
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+    }
+
+    &__img {
+        height: auto;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &__information {
+        opacity: 0;
+        visibility: hidden;
+        width: 100%;
+        padding: 0 15px;
+        text-align: center;
+        color: $white;
+        // width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease-in-out;
+    }
+
+    &__name {
+        @extend %poppinsbold;
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 4px;
+    }
+
+    &__job {
+        @extend %opensanssemibold;
+        font-size: 12px;
+        line-height: 24px;
+        margin-bottom: 26px;
+    }
+
+    &__link {
+        width: 40px;
+        height: 40px;
+    }
+
+    &__link svg {
+        margin: 0 10px;
+        width: 40px;
+        height: 40px;
+        fill: $white;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            fill: $black;
+        }
+    }
+}
+@media (max-width: 1119px) {
+    .teachers {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 964px) {
+    .teachers__inner {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 733px) {
+    .teachers__inner {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+}
+
+@media (max-width: 489px) {
+    .teachers__inner {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

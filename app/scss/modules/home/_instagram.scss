@@ -1,0 +1,37 @@
+.instagram {
+    margin-bottom: 80px;
+    &__info {
+        margin-bottom: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__content {
+        max-width: 649px;
+    }
+}
+@media (max-width: 1245px) {
+    .instagram {
+        margin-bottom: 25px;
+    }
+}
+@media (max-width: 934px) {
+    .instagram__content {
+        max-width: 100%;
+        text-align: center;
+    }
+    .instagram__img {
+        display: none;
+    }
+}
+@media (max-width: 663px) {
+    .instagram__title {
+        font-size: 30px;
+        line-height: 30px;
+    }
+}
+@media (max-width: 412px) {
+    .instagram__title {
+        font-size: 22px;
+    }
+}

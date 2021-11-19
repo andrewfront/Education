@@ -34,6 +34,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "es6-promise-polyfill": "^1.2.0",
+    "fslightbox": "^3.3.0-2",
     "gsap": "^3.8.0",
     "nodelist-foreach-polyfill": "^1.2.0",
     "swiper": "^7.3.0",

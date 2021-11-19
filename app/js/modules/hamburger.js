@@ -1,13 +1,13 @@
 const hamburger = () => {
-const hamburgeIcon = document.querySelector('.hambergerIcon')
+const hamburgeIcon = document.querySelector('.menu-toggle')
 const navBar = document.querySelector('nav')
 hamburgeIcon.addEventListener('click', () => {
-    hamburgeIcon.classList.toggle('open')
-    if (hamburgeIcon.classList.contains('open')) {
-        navBar.classList.add('active')
+    hamburgeIcon.classList.toggle('active')
+    if (hamburgeIcon.classList.contains('active')) {
+        navBar.classList.add('show')
         document.body.style.overflow = 'hidden'
     } else {
-        navBar.classList.remove('active')
+        navBar.classList.remove('show')
         document.body.style.overflow = ''
     }
 })
