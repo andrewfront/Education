@@ -9,6 +9,7 @@ Swiper.use([Navigation]);
 import slider from './modules/slider'
 import fixShake from './modules/fixShake'
 import fixed from './modules/fixed'
+import AOS from '../../node_modules/aos/dist/aos'
 window.addEventListener('DOMContentLoaded', () => {
     hamburger()
     lazyLoad()
@@ -16,4 +17,6 @@ window.addEventListener('DOMContentLoaded', () => {
     slider()
     fixShake()
     fixed()
+    AOS.init()
+    AOS.refresh()
 })
