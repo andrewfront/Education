@@ -64,7 +64,7 @@ body {
         cursor: pointer;
         &::before {
             content: '';
-            background-image: url(../../images/skills/arrowleft.svg);
+            background-image: url(../images/skills/arrowleft.svg);
             width: 32px;
             height: 32px;
             position: absolute;
@@ -76,7 +76,7 @@ body {
     .skills__button-next {
         margin-left: 24px;
         &::before {
-            background-image: url(../../images/skills/arrowright.svg);
+            background-image: url(../images/skills/arrowright.svg);
         }
     }
     .swiper-button-disabled {

@@ -10,6 +10,7 @@ import slider from './modules/slider'
 import fixShake from './modules/fixShake'
 import fixed from './modules/fixed'
 import AOS from '../../node_modules/aos/dist/aos'
+import youtube from './modules/youtube'
 window.addEventListener('DOMContentLoaded', () => {
     hamburger()
     lazyLoad()
@@ -19,4 +20,5 @@ window.addEventListener('DOMContentLoaded', () => {
     fixed()
     AOS.init()
     AOS.refresh()
+    youtube()
 })

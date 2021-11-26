@@ -1,0 +1,69 @@
+.tabs {
+margin-bottom: 120px;
+&__schedule {
+    margin-bottom: 88px;
+}
+.tabs__week,
+.tabs__time {
+    display: inline-block;
+    max-width: 331px;
+    color: $text;
+    font-size: 16px;
+    line-height: 24px;
+}
+.tabs__time {
+    margin-left: 20px;
+    padding-left: 20px;
+}
+.tabs__week {
+    position: relative;
+    padding-right: 20px;
+}
+&__week::after {
+    display: block;
+    content: '';
+    width: 1px;
+    height: 24px;
+    background-color: $text;
+    position: absolute;
+    top: 0;
+    left: 154px;
+}
+&__inner {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+&__frame {
+    background-color: $black;
+    width: 816px;
+    max-width: 100%;
+    height: 410px;
+    margin-right: 20px;
+}
+&__btns {
+max-width: 400px;
+font-size: 24px;
+line-height: 38px;
+@extend %poppinsreg;
+}
+&__btn {
+    color: $white;
+cursor: pointer;
+max-width: 400px;
+width: 100%;
+padding: 12px 0;
+background-color: $button;
+border: 1px solid $text;
+border-radius: 8px;
+&:focus {
+    background-color: $violet;
+}
+}
+&__btn:not(:last-child)  {
+    margin-bottom: 20px;
+    }
+    .focus {
+        background-color: $violet;
+    }
+}
