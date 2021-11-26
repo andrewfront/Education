@@ -4,13 +4,13 @@ require('fslightbox');
 import hamburger from './modules/hamburger'
 import lazyLoad from './modules/lazyLoad'
 import typetext from './modules/typetext'
-import Swiper, { Navigation} from 'swiper';
-Swiper.use([Navigation]);
+import Swiper, { Navigation, Autoplay} from 'swiper';
+Swiper.use([Navigation, Autoplay]);
 import slider from './modules/slider'
 import fixShake from './modules/fixShake'
 import fixed from './modules/fixed'
 import AOS from '../../node_modules/aos/dist/aos'
-import youtube from './modules/youtube'
+import Videoplayer from './modules/youtube'
 window.addEventListener('DOMContentLoaded', () => {
     hamburger()
     lazyLoad()
@@ -20,5 +20,6 @@ window.addEventListener('DOMContentLoaded', () => {
     fixed()
     AOS.init()
     AOS.refresh()
-    youtube()
+    const player = new Videoplayer('.tabs__btn', '.tabs__frame')
+    player.init()
 })

@@ -5,10 +5,15 @@ background-position: center center;
 background-repeat: no-repeat;
 background-size: cover;
 &__title {
-    padding: 200px 973px 200px 0;
+    padding: 200px 0;
     color: $white;
     @extend %poppinsbold;
     font-size: 64px;
     line-height: 88px;
 }
+}
+@media (max-width: 965px) {
+    .classesmain {
+        margin-bottom: 20px;
+    }
 }

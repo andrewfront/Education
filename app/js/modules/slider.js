@@ -42,5 +42,28 @@ const slider = () => {
             },
         },
     });
+    const tabsGallery = new Swiper('.tabs__swiper', {
+        spaceBetween: 17,
+        grabCursor: true,
+        slidesPerView: 4,
+        autoplay: {
+            delay: 2500,
+            // disableOnInteraction: true,
+          },
+        breakpoints: {
+            200: {
+                slidesPerView: 1,
+            },
+            324: {
+                slidesPerView: 2,
+            },
+            632: {
+                slidesPerView: 3,
+            },
+            947: {
+                slidesPerView: 4,
+            },
+        },
+    });
 }
 export default slider
