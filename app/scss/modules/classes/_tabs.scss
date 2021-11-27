@@ -36,7 +36,7 @@ justify-content: space-between;
 margin-bottom: 46px;
 }
 &__frame {
-    background-image: url(../../images/youtube/ytplaceholder.jpg);
+    background-image: url(../images/youtube/ytplaceholder.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
@@ -78,7 +78,7 @@ transition: all 0.3s ease-in-out;
 &::after {
     display: block;
     content: '';
-    background-image: url(../../images/youtube/play.svg);
+    background-image: url(../images/youtube/play.svg);
     background-repeat: no-repeat;
     position: absolute;
     top: 61%;

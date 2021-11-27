@@ -1,0 +1,27 @@
+.tutor {
+    margin-bottom: 120px;
+background-image: url(../images/teachersmain/teachersbg.jpg);
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+&__title {
+    padding: 200px 0;
+    color: $white;
+    @extend %poppinsbold;
+    font-size: 64px;
+    line-height: 88px;
+}
+}
+@media (max-width: 1361px) {
+    .tutor {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 303px) {
+    .tutor__title {
+        font-size: 32px;
+    }
+    .tutor {
+        margin-bottom: 20px;
+    }
+}
