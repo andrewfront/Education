@@ -1,0 +1,63 @@
+.learning {
+    margin-bottom: 160px;
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 160px;
+    }
+    &__content {
+        max-width: 567px;
+    }
+    &__img--order {
+    order: 2;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__text--first {
+        margin-bottom: 24px;
+    }
+}
+@media (max-width: 1264px) {
+    .learning {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 1216px) {
+    .learning__inner {
+        grid-row-gap: 20px;
+    }
+    .learning__item {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .learning__img {
+        margin-bottom: 10px;
+    }
+    .learning__content {
+        max-width: 100%;
+    }
+    .learning__img--order {
+        order: 0;
+    }
+}
+@media (max-width: 416px) {
+    .learning__inner {
+        grid-row-gap: 10px;
+    }
+    .learning__content {
+        text-align: center;
+    }
+    .learning__title {
+        font-size: 28px;
+        margin-bottom: 0;
+    }
+    .learning__text--first {
+        margin-bottom: 10px;
+    }
+}

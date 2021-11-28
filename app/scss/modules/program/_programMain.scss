@@ -1,0 +1,27 @@
+.program {
+    margin-bottom: 120px;
+    background-image: url(../images/program/programbg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &__title {
+        padding: 200px 0;
+        color: $white;
+        @extend %poppinsbold;
+        font-size: 64px;
+        line-height: 88px;
+    }
+    }
+    @media (max-width: 1361px) {
+        .program {
+            margin-bottom: 20px;
+        }
+    }
+    @media (max-width: 303px) {
+        .program__title {
+            font-size: 32px;
+        }
+        .program {
+            margin-bottom: 20px;
+        }
+}
