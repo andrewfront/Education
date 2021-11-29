@@ -11,6 +11,53 @@
 
 /***/ }),
 
+/***/ "./app/js/modules/counter.js":
+/*!***********************************!*\
+  !*** ./app/js/modules/counter.js ***!
+  \***********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const counter = () => {
+  window.addEventListener('scroll', () => {});
+  const numberBlock = document.querySelector('.counter__inner');
+
+  function getCoords(block) {
+    let box = block.getBoundingClientRect();
+    return {
+      top: box.top + pageYOffset,
+      left: box.left + pageXOffset
+    };
+  }
+
+  getCoords(numberBlock);
+  console.log(getCoords(numberBlock));
+  const counters = document.querySelectorAll('.number');
+  counters.forEach(counter => {
+    counter.innerText = '0';
+
+    function updateCounter() {
+      const target = +counter.getAttribute('data-target');
+      const c = +counter.innerText;
+      const increment = target / 200;
+
+      if (c < target) {
+        counter.innerText = `${Math.ceil(c + increment)}`;
+        setTimeout(updateCounter, 1);
+      } else {
+        counter.innerText = target;
+      }
+    }
+
+    updateCounter();
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (counter);
+
+/***/ }),
+
 /***/ "./app/js/modules/fixShake.js":
 /*!************************************!*\
   !*** ./app/js/modules/fixShake.js ***!
@@ -27576,6 +27623,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_aos_dist_aos__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../node_modules/aos/dist/aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var _node_modules_aos_dist_aos__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_node_modules_aos_dist_aos__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _modules_youtube__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/youtube */ "./app/js/modules/youtube.js");
+/* harmony import */ var _modules_counter__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/counter */ "./app/js/modules/counter.js");
 __webpack_require__(/*! es6-promise-polyfill */ "./node_modules/es6-promise-polyfill/promise.js");
 
 
@@ -27592,6 +27640,7 @@ swiper__WEBPACK_IMPORTED_MODULE_4__["default"].use([swiper__WEBPACK_IMPORTED_MOD
 
 
 
+
 window.addEventListener('DOMContentLoaded', () => {
   (0,_modules_hamburger__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_modules_lazyLoad__WEBPACK_IMPORTED_MODULE_2__["default"])();
@@ -27603,6 +27652,7 @@ window.addEventListener('DOMContentLoaded', () => {
   _node_modules_aos_dist_aos__WEBPACK_IMPORTED_MODULE_8___default().refresh();
   const player = new _modules_youtube__WEBPACK_IMPORTED_MODULE_9__["default"]('.tabs__btn', '.tabs__frame');
   player.init();
+  (0,_modules_counter__WEBPACK_IMPORTED_MODULE_10__["default"])();
 });
 }();
 /******/ })()

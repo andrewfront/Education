@@ -11,6 +11,7 @@ import fixShake from './modules/fixShake'
 import fixed from './modules/fixed'
 import AOS from '../../node_modules/aos/dist/aos'
 import Videoplayer from './modules/youtube'
+import counter from './modules/counter'
 window.addEventListener('DOMContentLoaded', () => {
     hamburger()
     lazyLoad()
@@ -22,4 +23,5 @@ window.addEventListener('DOMContentLoaded', () => {
     AOS.refresh()
     const player = new Videoplayer('.tabs__btn', '.tabs__frame')
     player.init()
+    counter()
 })
