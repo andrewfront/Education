@@ -20,38 +20,41 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 const counter = () => {
-  window.addEventListener('scroll', () => {});
-  const numberBlock = document.querySelector('.counter__inner');
-
-  function getCoords(block) {
-    let box = block.getBoundingClientRect();
-    return {
-      top: box.top + pageYOffset,
-      left: box.left + pageXOffset
-    };
-  }
-
-  getCoords(numberBlock);
-  console.log(getCoords(numberBlock));
+  const counterContainer = document.querySelector('.counter');
   const counters = document.querySelectorAll('.number');
-  counters.forEach(counter => {
-    counter.innerText = '0';
+  let a = 0;
 
-    function updateCounter() {
-      const target = +counter.getAttribute('data-target');
-      const c = +counter.innerText;
-      const increment = target / 200;
+  if (counterContainer && counters) {
+    window.addEventListener('scroll', () => {
+      const containerElementToViewport = counterContainer.getBoundingClientRect().top;
+      const {
+        scrollTop,
+        clientHeight
+      } = document.documentElement;
 
-      if (c < target) {
-        counter.innerText = `${Math.ceil(c + increment)}`;
-        setTimeout(updateCounter, 1);
-      } else {
-        counter.innerText = target;
+      if (a == 0 && scrollTop > (scrollTop + containerElementToViewport).toFixed() - clientHeight * 0.5) {
+        counters.forEach(counter => {
+          counter.innerText = '0';
+
+          function updateCounter() {
+            const target = +counter.getAttribute('data-target');
+            const c = +counter.innerText;
+            const increment = target / 200;
+
+            if (c < target) {
+              counter.innerText = `${Math.ceil(c + increment)}`;
+              setTimeout(updateCounter, 1);
+            } else {
+              counter.innerText = target;
+            }
+          }
+
+          updateCounter();
+          a = 1;
+        });
       }
-    }
-
-    updateCounter();
-  });
+    });
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (counter);
@@ -305,15 +308,46 @@ const typetext = () => {
   gsap_all__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.TextPlugin);
   gsap_all__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
   const headerTitle = document.querySelector('.headertop__title');
-  const bbb = document.querySelector('.about__item-title');
-  gsap_all__WEBPACK_IMPORTED_MODULE_0__.gsap.to(headerTitle, {
-    text: {
-      value: "Forming a new <br> generation of leaders"
-    },
-    duration: 2,
-    delay: 0,
-    ease: "none"
-  });
+
+  if (headerTitle) {
+    gsap_all__WEBPACK_IMPORTED_MODULE_0__.gsap.to(headerTitle, {
+      text: {
+        value: "Forming a new <br> generation of leaders"
+      },
+      duration: 2,
+      delay: 0,
+      ease: "none"
+    });
+  }
+
+  const text = document.querySelectorAll('.animation__title');
+
+  for (let i = 0; i < text.length; i++) {
+    const splitText = el => {
+      el.innerHTML = el.textContent.replace(/(\S*)/g, m => {
+        return `<span class="word">` + m.replace(/(-|#|@)?\S(-|#|@)?/g, "<span class='letter'>$&</span>") + `</span>`;
+      });
+      return el;
+    };
+
+    const split = splitText(text[i]);
+
+    function random(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    Array.from(split.querySelectorAll('.letter')).forEach((el, idx) => {
+      gsap_all__WEBPACK_IMPORTED_MODULE_0__.TweenMax.from(el, 2.5, {
+        opacity: 0,
+        scale: .1,
+        x: random(-500, 500),
+        y: random(-500, 500),
+        z: random(-500, 500),
+        delay: idx * 0.02,
+        repeat: 0
+      });
+    });
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (typetext);

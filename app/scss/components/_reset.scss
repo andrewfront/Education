@@ -36,7 +36,9 @@ hr {
     overflow: visible;
     /* 2 */
 }
-
+span {
+    display: inline-block;
+}
 pre {
     font-family: monospace, monospace;
     /* 1 */
